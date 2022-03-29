@@ -1,3 +1,6 @@
+.oculto{
+  display: none !important;
+}
 .App {
   text-align: center;
 }
@@ -35,4 +38,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: rgb(187, 187, 187); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+li,p,h1,h2,h3,h4,h5,h6,p,span,a,label,input,button {
+  font-family: Montserrat !important;
 }

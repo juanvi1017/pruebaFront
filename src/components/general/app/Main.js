@@ -72,7 +72,7 @@ class Main extends Component {
   save(data){
     let {updateMessage} = this.props;
     return new Promise(resolve => {
-      consulta(`api/multiplicacion`, data, "post", (error, estado, resp) => {
+      consulta(`api/multiplicacion/save`, data, "post", (error, estado, resp) => {
         let title = 'Ha ocurrido un error, contacte con el administrador.', types = 'error';
         if (!error) {
           if (estado === 200) { 
@@ -97,7 +97,7 @@ class Main extends Component {
    delete(){
     let {updateMessage} = this.props;
     return new Promise(resolve => {
-      consulta(`api/multiplicacion`, '', "delete", (error, estado, resp) => {
+      consulta(`api/multiplicacion/delete`, '', "delete", (error, estado, resp) => {
         let title = 'Ha ocurrido un error, contacte con el administrador.', types = 'error';
         if (!error) {
           if (estado === 200) { 
@@ -117,7 +117,7 @@ class Main extends Component {
 
   async listValores() {
     return new Promise(resolve => {
-      consulta(`api/multiplicacion`, null, "get", (error, estado, resp) => {
+      consulta(`api/multiplicacion/list`, null, "get", (error, estado, resp) => {
           resolve(estado === 200 && !error ? resp : null);
       })
     })
@@ -205,7 +205,7 @@ class Main extends Component {
                   </CardContent>
                 <CardActions>
                   <Button size="small" color="primary" onClick={this.onSubmit}>
-                    Aceptar
+                    Multiplicar
                   </Button>
                   <Button size="small" color="primary" onClick={this.onDelete}>
                     Limpiar Historico
